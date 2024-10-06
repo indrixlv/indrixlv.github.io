@@ -14,7 +14,7 @@ body {
 .link-box {
     width: 200px;
     height: 100px;
-    background-color: orange;
+    background-color: #ff9955;
     color: black;
     display: flex;
     justify-content: center;
