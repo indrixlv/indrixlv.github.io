@@ -1,31 +1,51 @@
+/* Stila uzstādījumi visam ķermenim */
 body {
     margin: 0;
-    background-color: black;
-    font-family: Arial, sans-serif;
-}
-
-.container {
-    display: flex;
-    justify-content: space-around;
-    align-items: center;
-    height: 100vh; /* Augstums būs visa lapa */
-}
-
-.link-box {
-    width: 200px;
-    height: 100px;
-    background-color: #ff9955;
-    color: black;
+    padding: 0;
     display: flex;
     justify-content: center;
     align-items: center;
-    text-align: center;
-    font-size: 20px;
-    font-weight: bold;
-    cursor: pointer;
-    transition: background-color 0.3s;
+    min-height: 100vh;
+    background-color: black;
 }
 
-.link-box:hover {
-    background-color: darkorange; /* Kad pārvelk ar peli */
+/* Galvenais konteiners ar CSS Grid */
+.container {
+    display: grid;
+    grid-template-columns: repeat(3, 300px); /* 3 kolonnas ar 300px platumu */
+    grid-gap: 10px; /* Attālums starp taisnstūriem */
+    justify-content: center;
+    padding: 10px 10px; /* Vismaz 20px no malas */
+}
+
+/* Stila uzstādījumi oranžajiem taisnstūriem */
+.box {
+    display: block;
+    width: 300px;  /* Fiksēts platums */
+    height: 200px; /* Divreiz augstāks */
+    background-color: orange;
+    color: black;
+    text-align: center;
+    line-height: 200px; /* Līniju augstums atbilst augstumam, lai teksts centrētos vertikāli */
+    font-size: 40px;    /* Divreiz lielāks fonts */
+    font-family: Arial, sans-serif;
+    text-decoration: none;
+    margin: 0 auto; /* Nodrošina, ka taisnstūri ir centrēti arī uz šaurākiem ekrāniem */
+}
+
+/* Kad logs kļūst šaurāks (zem 900px), pāriet uz 2 kolonnām */
+@media (max-width: 900px) {
+    .container {
+        grid-template-columns: repeat(2, 300px); /* 2 kolonnas ar 300px platumu */
+    }
+}
+
+/* Viena kolonna uz ļoti šauriem ekrāniem (zem 600px) */
+@media (max-width: 600px) {
+    .container {
+        grid-template-columns: 1fr; /* 1 kolonna */
+    }
+    .box {
+        width: 300px; /* Saglabā fiksētu platumu arī šaurākiem ekrāniem */
+    }
 }
