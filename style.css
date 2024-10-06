@@ -1,9 +1,32 @@
-@import url('https://fonts.googleapis.com/css2?family=Sixtyfour+Convergence&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=Dancing+Script:wght@400..700&family=Sixtyfour+Convergence&display=swap');
-
-p {
-  font-family: 'Dancing Script', sans-serif;
+body {
+    margin: 0;
+    background-color: black;
+    font-family: Arial, sans-serif;
 }
-h1 {
-  font-family: 'Sixtyfour Convergence', sans-serif;
+
+.container {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    height: 100vh; /* Augstums būs visa lapa */
+}
+
+.link-box {
+    width: 200px;
+    height: 100px;
+    background-color: orange;
+    color: black;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    font-size: 20px;
+    font-weight: bold;
+    cursor: pointer;
+    border-radius: 5px;
+    transition: background-color 0.3s;
+}
+
+.link-box:hover {
+    background-color: darkorange; /* Kad pārvelk ar peli */
 }
